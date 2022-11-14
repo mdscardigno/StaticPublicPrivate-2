@@ -18,6 +18,14 @@ namespace StaticPublicPrivate
         {
             Console.WriteLine("Squawk");
         }
+        //behavior
+        //related to Bird but not one instance of Bird
+        //for static, I am defining a method in the class itself and not in the instance of the class
+        static public Boolean AreTheyAwesome()
+        {
+            return true;
+        }
+
         //why would we use private methods?
         //to hide the implementation details of a method from the outside world
     }
@@ -26,7 +34,10 @@ namespace StaticPublicPrivate
         static void Main(string[] args)
         {
             var louie = new Bird();
+            //louie.Squawk(); is an instance of the bird
             louie.Squawk();//louie, the object performs its behavior or method Squawk
+            Bird.AreTheyAwesome();//So I can call the method AreTheyAwesome on the class Bird not on an instance of a Bird
+            // louie.AreTheyAwesome();//louie, the object performs its behavior or method AreTheyAwesome
             Console.WriteLine("Static Public Private");
 
         }
